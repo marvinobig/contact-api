@@ -1,0 +1,22 @@
+{
+  "name": "contact-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/listen.js",
+  "scripts": {
+    "start": "node server/listen.js",
+    "dev": "nodemon server/listen.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1",
+    "nodemailer": "^6.8.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
