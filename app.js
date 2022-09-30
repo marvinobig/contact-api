@@ -4,6 +4,11 @@ const cors = require("cors");
 const nodemailer = require("nodemailer");
 const app = express();
 
+// API configuration
+dotenv.config();
+app.use(express.json());
+app.use(cors({ origin: true, credentials: true }));
+
 //email endpoint
 app.post("api/email", (req, res, next) => {
   try {
