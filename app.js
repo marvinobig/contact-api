@@ -29,7 +29,7 @@ app.post("/api/contact", (req, res, next) => {
     });
 
     const mail = {
-      to: process.env.EMAIL_ADDR,
+      to: process.env.EMAIL_TO,
       subject: subject,
       html: `
         <p>${message}</p>
