@@ -32,9 +32,10 @@ app.post("/api/contact", (req, res, next) => {
       to: process.env.EMAIL_TO,
       subject: subject,
       html: `
+        <p>Hello Marvin</p>
+        <br/>
         <p>${message}</p>
         <p>Reply back to this email: ${sender}</p>
-        <br/>
         <br/>
         <p>Kind regards,<br/>
         ${name}</p>
