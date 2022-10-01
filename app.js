@@ -2,6 +2,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const cors = require("cors");
 const nodemailer = require("nodemailer");
+const reqValidator = require("./middlewares/reqValidator");
 const app = express();
 
 // API configuration
@@ -10,7 +11,7 @@ app.use(express.json());
 app.use(cors({ origin: `${process.env.CLIENT}` }));
 
 //email endpoint
-app.post("/api/contact", (req, res, next) => {
+app.post("/api/contact", reqValidator, (req, res, next) => {
   try {
     const { sender, subject, name, message } = req.body;
 
@@ -32,7 +33,7 @@ app.post("/api/contact", (req, res, next) => {
       to: process.env.EMAIL_TO,
       subject: subject,
       html: `
-        <p>Hello Marvin</p>
+        <p>Hello Marvin,</p>
         <br/>
         <p>${message}</p>
         <p>Reply back to this email: ${sender}</p>
