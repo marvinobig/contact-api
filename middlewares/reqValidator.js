@@ -11,12 +11,12 @@ const reqValidator = (req, res, next) => {
     ? (validationObj.from = "field needs a valid email address")
     : (validationObj.from = undefined);
 
-  !name.match(/^(\w{2,})\s(\w{2,})$/m)
-    ? (validationObj.name = "field needs your first & last name")
+  !name.match(/^\w{2,}$/m)
+    ? (validationObj.name = "field needs your name")
     : (validationObj.name = undefined);
 
-  !subject.match(/[A-Za-z0-9]{5,}/)
-    ? (validationObj.subject = "field needs to include 5 characters or more")
+  !subject.match(/[A-Za-z0-9]{2,}/)
+    ? (validationObj.subject = "field needs to include 2 characters or more")
     : (validationObj.subject = undefined);
 
   !message.match(/([A-Za-z0-9\W]{5,})+/m)
